@@ -40,7 +40,7 @@ class Search extends Component {
   }
 
   SearchSucessView = () => {
-    const {ApiPosterStatus, searchList} = this.state
+    const {searchList} = this.state
     console.log('sucess', searchList)
     // const num = 0
     return (
@@ -84,9 +84,7 @@ class Search extends Component {
 
   callSearchApi = async searchInput => {
     const apiUrl = `https://apis.ccbp.in/movies-app/movies-search?search=${searchInput}`
-    this.setState({
-      ApiTrendingNowStatus: apiStatusConstants.inProgress,
-    })
+
     const jwtToken = Cookies.get('jwt_token')
 
     const options = {
